@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SweetScape</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SweetScape</h1>
+            <p>Your birthday, your campaigns.</p>
+        </header>
+        
+        <section class="form-section">
+            <h2>Let's Meet You</h2>
+            <div class="form-container">
+                <form id="birthdayForm">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="date" id="birthday" required>
+                    <textarea id="note" placeholder="Leave a note on your birthday. (optional)" maxlength="20"></textarea>
+                    <button type="submit">Check out the suggestions!</button>
+                </form>
+            </div>
+        </section>
+        
+        <section id="campaigns" class="campaigns-section hidden">
+        </section>
+        
+        <section id="countdown" class="countdown-section hidden">
+            <h2>Countdown to your birthday:</h2>
+            <div id="countdownDisplay">
+                <div class="time-unit">
+                    <span id="days">00</span>
+                    <span class="label">Days</span>
+                </div>
+                <div class="time-unit">
+                    <span id="hours">00</span>
+                    <span class="label">Hours</span>
+                </div>
+                <div class="time-unit">
+                    <span id="minutes">00</span>
+                    <span class="label">Minutes</span>
+                </div>
+                <div class="time-unit">
+                    <span id="seconds">00</span>
+                    <span class="label">Seconds</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="suggestions" class="suggestions-section hidden">
+            <h2 class="section-title">Brand Suggestions Just for You</h2>
+            <div id="suggestionList" class="suggestion-list">
+            </div>
+        </section>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+[
+    {
+        "brand": "Brand A",
+        "offer": "20% off on all items",
+        "validUntil": "2023-12-31",
+        "source": "https://example.com/brandA"
+    },
+    {
+        "brand": "Brand B",
+        "offer": "Buy one get one free",
+        "validUntil": "2023-11-30",
+        "source": "https://example.com/brandB"
+    }
+]
