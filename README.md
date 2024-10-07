@@ -1,4 +1,5 @@
-# SweetScape
+# ![SweetScape](https://github.com/user-attachments/assets/910edca8-3564-4fda-b759-ba24ac07cc9d)
+
 
 This web application helps users discover special birthday offers from various brands. It offers a personalized experience by showcasing predefined brand campaigns based on the user’s birth date using **HTML**, **CSS**, and **JavaScript**.
 
