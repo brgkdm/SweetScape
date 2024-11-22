@@ -1,6 +1,9 @@
 document.getElementById('birthdayForm').addEventListener('submit', function (e) {
     e.preventDefault();
 
+    // Show the loading spinner
+    document.getElementById('loading').classList.remove('hidden');
+
     const name = document.getElementById('name').value;
     const birthday = new Date(document.getElementById('birthday').value);
     const note = document.getElementById('note').value;
@@ -14,7 +17,12 @@ document.getElementById('birthdayForm').addEventListener('submit', function (e) 
     localStorage.setItem('birthday', birthday);
     localStorage.setItem('note', note);
 
-    checkBirthday(birthday);
+    // Simulate the delay for data processing
+    setTimeout(() => {
+        checkBirthday(birthday);
+        // Hide the loading spinner after processing
+        document.getElementById('loading').classList.add('hidden');
+    }, 2000); // Adjust the timeout as necessary (simulate delay for fetching data)
 });
 
 function checkBirthday(birthday) {
