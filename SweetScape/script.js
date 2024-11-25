@@ -1,12 +1,38 @@
 document.getElementById('birthdayForm').addEventListener('submit', function (e) {
     e.preventDefault();
 
+    const messages = [
+        "Surprises are on the way, be patient!",
+        "Special offers are being loaded for you...",
+        "Almost Done..."
+    ];
+
+    const randomDelay = Math.random() < 0.5 ? 5000 : 7000; // Randomly choose between 5 and 7 seconds
+    const loadingTextElement = document.getElementById('loadingText');
+    const loadingElement = document.getElementById('loading');
+
+    // Show the loading spinner
+    loadingElement.classList.remove('hidden');
+
+    let messageIndex = 0;
+    const updateMessage = () => {
+        if (messageIndex < messages.length) {
+            loadingTextElement.textContent = messages[messageIndex];
+            messageIndex++;
+        }
+    };
+
+    updateMessage(); 
+    const messageInterval = setInterval(updateMessage, randomDelay / messages.length);
+
     const name = document.getElementById('name').value;
     const birthday = new Date(document.getElementById('birthday').value);
     const note = document.getElementById('note').value;
 
     if (note.length > 20) {
         alert("Note cannot exceed 20 characters!");
+        loadingElement.classList.add('hidden'); 
+        clearInterval(messageInterval);
         return;
     }
 
@@ -14,8 +40,13 @@ document.getElementById('birthdayForm').addEventListener('submit', function (e) 
     localStorage.setItem('birthday', birthday);
     localStorage.setItem('note', note);
 
-    checkBirthday(birthday);
-});
+    setTimeout(() => {
+        clearInterval(messageInterval); 
+        checkBirthday(birthday);
+
+        loadingElement.classList.add('hidden');
+    }, randomDelay); 
+    });
 
 function checkBirthday(birthday) {
     const today = new Date();
