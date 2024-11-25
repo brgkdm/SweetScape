@@ -230,21 +230,23 @@ button:hover {
     color: #6a11cb;
 }
 
-/* Loading spinner */
+/* Loading spinner styles */
 .loading-spinner {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.7);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    color: #ffffff;
     font-size: 1.5rem;
-    z-index: 999;
+    z-index: 9999;
     transition: opacity 0.3s ease;
+    text-align: center;
 }
 
 .loading-spinner.hidden {
@@ -252,12 +254,13 @@ button:hover {
 }
 
 .spinner {
-    border: 8px solid #f3f3f3; /* Light gray */
-    border-top: 8px solid #6a11cb; /* Purple */
+    border: 8px solid #f3f3f3; 
+    border-top: 8px solid #6a11cb; 
     border-radius: 50%;
     width: 50px;
     height: 50px;
     animation: spin 1s linear infinite;
+    margin-bottom: 15px;
 }
 
 @keyframes spin {
