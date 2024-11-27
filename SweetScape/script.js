@@ -156,3 +156,24 @@ function loadSuggestions() {
             suggestionList.innerHTML = '<p>Failed to load suggestions. Please try again later.</p>';
         });
 }
+
+const noteTextarea = document.getElementById("note");
+const characterCount = document.getElementById("character-count");
+const noteCurrentCount = document.getElementById("current");
+
+function countCharacters() {
+    const noteCurrentLength = noteTextarea.value.length;
+    noteCurrentCount.innerText = noteCurrentLength;
+}
+
+function showCharacterCount() {
+    characterCount.style.visibility = "visible";
+}
+
+function hideCharacterCount() {
+    characterCount.style.visibility = "hidden";
+}
+
+noteTextarea.addEventListener("focus", showCharacterCount);
+noteTextarea.addEventListener("input", countCharacters);
+noteTextarea.addEventListener("blur", hideCharacterCount);
